@@ -12,3 +12,4 @@ create the following:
 9. deploy to aws, heroku and vercel/any other deployment
 10. multiple notebooks for pycaret, automl, sklearn and neural network implementations
 11. transform the data 
+12. Create android kivy app
