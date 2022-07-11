@@ -1,0 +1,2 @@
+add chatbot
+add qr code generator for the site
