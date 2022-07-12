@@ -1,14 +1,15 @@
 add chatbot
 add qr code generator for the site
 create the following:
-1. bentoml implementation
+1. bentoml implementation(this will be the main api)
 2. mlflow or kubeflow implementation
-3. flask application
-4. fastapi application
-5. streamlit application
+3. flask application with html(different template)
+4. fastapi application with html 
+5. streamlit application with comment section and chatbot
 6. dvc workflow
 7. pytests to test the flask and fastapi routes
 8. locust test to test load
 9. deploy to aws, heroku and vercel/any other deployment
 10. multiple notebooks for pycaret, automl, sklearn and neural network implementations
 11. transform the data 
+12. Create android kivy app, publish it as a package
