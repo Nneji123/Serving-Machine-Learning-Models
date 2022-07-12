@@ -13,3 +13,4 @@ create the following:
 10. multiple notebooks for pycaret, automl, sklearn and neural network implementations
 11. transform the data 
 12. Create android kivy app, publish it as a package
+13. Add nice github actions 
