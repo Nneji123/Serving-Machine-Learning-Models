@@ -7,6 +7,7 @@
   <title>Car Price Prediction ML App</title>
 
   <link rel="stylesheet" href="{{ url_for('static', filename='w3.css') }}">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.png') }}">
   <style type="text/css">
     .mySlides {
       display: none;
@@ -29,66 +30,128 @@
 
   <div class="w3-container">
     <form class="w3-container w3-card-2" action="{{ url_for('predict')}}" method="POST" style="width: 100%">
-      <h2 class="w3-text-blue w3-center w3-text-black">Input Your Details</h2>
+      <h2 class="w3-text-blue w3-center w3-text-black">Enter Car Details</h2>
       <p>
-        <label class="w3-text-black"><b>Anaemia</b></label>
-        <input id="id1" class="w3-input w3-border" name="anaemia"
-          placeholder="Enter 1 for Anaemic and 0 for not Anaemic" required="required" type="number">
+        <label class="w3-text-black"><b>Name of Car</b></label>
+        <input id="id1" class="w3-input w3-border" name="names" placeholder="Enter Name of Car" required="required"
+          type="text">
       </p>
       <p>
-        <label class="w3-text-black"><b>Sex</b></label>
-        <input id="char" class="w3-input w3-border" name="sex" type="number"
-          placeholder="Enter 0 for Female and 1 for Male" required="required">
+        <label class="w3-text-black"><b>Symboling</b></label>
+        <input id="id1" class="w3-input w3-border" name="symboling" placeholder="Enter 1, 2 or 3 for Symboling Level"
+          required="required" type="number">
       </p>
-      <label class="w3-text-black"><b>Age</b></label>
-      <input id="id1" class="w3-input w3-border" name="age" type="number" placeholder="Age" required="required"></p>
       <p>
-        <label class="w3-text-black"><b>Creatinine Phosphokinase Level</b></label>
-        <input id="id1" class="w3-input w3-border" name="creatinine_phos" placeholder="Creatinine Phosphokinase Level"
+        <label class="w3-text-black"><b>Fuel Type</b></label>
+        <input id="char" class="w3-input w3-border" name="fueltype" type="number"
+          placeholder="Enter 0 for Diesel or 1 for Petrol Fuel Type" required="required">
+      </p>
+      <label class="w3-text-black"><b>Aspiration</b></label>
+      <input id="id1" class="w3-input w3-border" name="aspiration" type="number"
+        placeholder="Enter Engine Aspiration Type" required="required"></p>
+      <p>
+        <label class="w3-text-black"><b>Number of Doors</b></label>
+        <input id="id1" class="w3-input w3-border" name="doornumber" placeholder="Enter Number of Car Doors
+          type=" number" required="required">
+      </p>
+      <label class="w3-text-black"><b>Car Body</b></label>
+      <input id="id1" class="w3-input w3-border" name="carbody" placeholder="Enter Car body Level" type="number"
+        required="required"></p>
+      <p>
+        <label class="w3-text-black"><b>Drive Wheel</b></label>
+        <input id="id1" class="w3-input w3-border" name="drivewheel" placeholder="Enter Drive Wheel Position 1 or 0"
           type="number" required="required">
       </p>
-      <label class="w3-text-black"><b>Diabetes</b></label>
-      <input id="id1" class="w3-input w3-border" name="diabetes"
-        placeholder="Enter 1 for Diabetic and 0 for Not Diabetic" type="number" required="required"></p>
-      <p>
-        <label class="w3-text-black"><b>Ejection Level</b></label>
-        <input id="id1" class="w3-input w3-border" name="ejection" placeholder="Ejection Fraction" type="number"
-          required="required">
-      </p>
       <p>
       <p>
-        <label class="w3-text-black"><b>Time</b></label>
-        <input id="id1" class="w3-input w3-border" name="time" placeholder="Time" type="number" required="required">
+        <label class="w3-text-black"><b>Engine Location</b></label>
+        <input id="id1" class="w3-input w3-border" name="enginelocation" placeholder="Enter Engine Location"
+          type="number" required="required">
       </p>
       <p>
 
-        <label class="w3-text-black"><b>Blood Pressure</b></label>
-        <input id="id1" class="w3-input w3-border" name="hbp"
-          placeholder="Enter 1 for high blood pressure and 0 for low blood pressure" required="required" type="number">
+        <label class="w3-text-black"><b>Wheel Base</b></label>
+        <input id="id1" class="w3-input w3-border" name="wheelbase" placeholder="Enter Wheel Base Value"
+          required="required" type="number">
       </p>
       <p>
       <p>
-        <label class="w3-text-black"><b>Platelets</b></label>
-        <input id="id1" class="w3-input w3-border" name="plat" placeholder="Platelets" required="required"
+        <label class="w3-text-black"><b>Car Length</b></label>
+        <input id="id1" class="w3-input w3-border" name="carlength" placeholder="Enter Car Length" required="required"
           type="number">
       </p>
       <p>
       <p>
-        <label class="w3-text-black"><b>Serum Creatinine Level</b></label>
-        <input id="id1" class="w3-input w3-border" name="serum_creatinine" placeholder="Serum Creatinine Level"
-          required="required" type="number">
+        <label class="w3-text-black"><b>Car Width</b></label>
+        <input id="id1" class="w3-input w3-border" name="carwidth" placeholder="Enter Car Width" required="required"
+          type="number">
       </p>
       <p>
       <p>
-        <label class="w3-text-black"><b>Serum Sodium Level</b></label>
-        <input id="id1" class="w3-input w3-border" name="serum_sodium" placeholder="Serum Sodium Level"
-          required="required" type="number">
+        <label class="w3-text-black"><b>Car Height</b></label>
+        <input id="id1" class="w3-input w3-border" name="carheight" placeholder="Enter Car Height" required="required"
+          type="number">
       </p>
       <p>
       <p>
-        <label class="w3-text-black"><b>Smoking</b></label>
-        <input id="id1" class="w3-input w3-border" name="smoking"
-          placeholder="Enter 1 if you smoke and 0 if you don't smoke" required="required" type="number">
+        <label class="w3-text-black"><b>Curb Weight</b></label>
+        <input id="id1" class="w3-input w3-border" name="curbweight" placeholder="Enter Curb Weight" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Engine Type</b></label>
+        <input id="id1" class="w3-input w3-border" name="enginetype" placeholder="Enter Engine Type" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Number of Cylinders</b></label>
+        <input id="id1" class="w3-input w3-border" name="cylindernumber" placeholder="Enter Number of Cylinders"
+          required="required" type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Engine Size</b></label>
+        <input id="id1" class="w3-input w3-border" name="enginesize" placeholder="Enter the size of the Engine"
+          required="required" type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Fuel System Type</b></label>
+        <input id="id1" class="w3-input w3-border" name="fuelsystem" placeholder="Enter Fuel System Type"
+          required="required" type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Bore Ratio</b></label>
+        <input id="id1" class="w3-input w3-border" name="boreratio" placeholder="Enter Bore Ratio" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Stroke</b></label>
+        <input id="id1" class="w3-input w3-border" name="stroke" placeholder="Enter Stroke" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Compression Ratio</b></label>
+        <input id="id1" class="w3-input w3-border" name="compressionratio" placeholder="Enter Compression Ratio"
+          required="required" type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Horse Power</b></label>
+        <input id="id1" class="w3-input w3-border" name="horsepower" placeholder="Enter Horse Power" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Peak RPM</b></label>
+        <input id="id1" class="w3-input w3-border" name="peakrpm" placeholder="Enter Peak RPM" required="required"
+          type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>City Miles Per Gallon</b></label>
+        <input id="id1" class="w3-input w3-border" name="citympg" placeholder="Enter City Miles Per Gallon"
+          required="required" type="number">
+      </p>
+      <p>
+        <label class="w3-text-black"><b>Highway Miles Per Gallon</b></label>
+        <input id="id1" class="w3-input w3-border" name="highwaympg" placeholder="Enter Highway Miles Per Gallon"
+          required="required" type="number">
       </p>
       <p>
         <button onclick="myFunction()" type="submit"
