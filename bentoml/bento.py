@@ -33,3 +33,13 @@ model = bentoml.pycaret.load("reg:latest")
 input_data = pd.from_csv("./Data/cars.csv")
 runner = bentoml.pycaret.load_runner(tag)
 runner.run(pd.DataFrame("./Data/cars.csv"))
+
+svc = bentoml.Service("pycaret", runners=[runner])
+
+
+@svc.api(data=data_unseen)
+def predict(data = data_unseen):
+    img_arr = np.array(input_img)/255.0
+    input_arr = np.expand_dims(img_arr, 0).astype("float32")
+    output_tensor = mnist_runner.predict.run(input_arr)
+    return output_tensor.numpy()
