@@ -5,7 +5,7 @@ from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.model_selection import train_test_split
 
 dataset = pd.read_csv(
-    "./Data/cars.csv",
+    "../Data/cars.csv",
     usecols=[
         "symboling",
         "fueltype",
@@ -54,24 +54,12 @@ df = encode(dataset)
 
 X = df.drop("price", axis=1)
 y = df.price
+
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=0)
-model = GradientBoostingRegressor().fit(X_train, y_train)
+model = GradientBoostingRegressor()
 
-x = model.predict(X_test)
-from sklearn.metrics import r2_score
+model.fit(X_train, y_train)
 
-score = print(r2_score(x, y_test))
+import joblib
 
-# # `save` a given classifier and retrieve coresponding tag:
-# tag = bentoml.sklearn.save_model('gbr', model)
-
-# # retrieve metadata with `bentoml.models.get`:
-# metadata = bentoml.models.get(tag)
-
-# # load the model back:
-# loaded = bentoml.sklearn.load_model("gbr:latest")
-
-# # Run a given model under `Runner` abstraction with `to_runner`
-# runner = bentoml.sklearn.get(tag).to_runner()
-# runner.init_local()
-# runner.run([[1,2,3,4,5]])
+joblib.dump(model, "./models/sklearn_gbr.pkl")

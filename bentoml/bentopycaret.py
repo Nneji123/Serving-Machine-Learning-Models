@@ -16,7 +16,7 @@ data.reset_index(inplace=True, drop=True)
 data_unseen.reset_index(inplace=True, drop=True)
 
 pycaret_setup(data=data, target="price", session_id=123, silent=True)
-gbr = create_model('gbr')
+gbr = create_model("gbr")
 tuned_gbr = tune_model(gbr)
 final_dt = finalize_model(tuned_gbr)
 
@@ -33,6 +33,3 @@ model = bentoml.pycaret.load("reg:latest")
 input_data = pd.from_csv("./Data/cars.csv")
 runner = bentoml.pycaret.load_runner(tag)
 runner.run(pd.DataFrame("./Data/cars.csv"))
-
-
-

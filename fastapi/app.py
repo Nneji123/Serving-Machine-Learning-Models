@@ -1,23 +1,68 @@
 # 1. Library imports
 import pandas as pd
-from pycaret.regression import load_model, predict_model
+import joblib
 from fastapi import FastAPI
+from fastapi.responses import PlainTextResponse
+from models import *
+import numpy as np
+from sklearn.ensemble import GradientBoostingRegressor
 
 # 2. Create the app object
 app = FastAPI()
 
-# . Load trained Pipeline
-model = load_model('./model')
 
-# Define predict function
+@app.get("/", response_class=PlainTextResponse)
+async def running():
+    note = """
+Car Price Prediction API 🙌🏻
+Note: add "/docs" to the URL to get the Swagger UI Docs or "/redoc"
+  """
+    return note
 
 
-@app.post('/predict')
-def predict(carat_weight, cut, color, clarity, polish, symmetry, report):
-    data = pd.DataFrame(
-        [[carat_weight, cut, color, clarity, polish, symmetry, report]])
-    data.columns = ['Carat Weight', 'Cut', 'Color',
-                    'Clarity', 'Polish', 'Symmetry', 'Report']
+favicon_path = "favicon.png"
 
-    predictions = predict_model(model, data=data)
-    return {'price': int(predictions['Label'][0])}
+
+@app.get("/favicon.png", include_in_schema=False)
+async def favicon():
+    return FileResponse(favicon_path)
+
+
+@app.post("/predict")
+def predict(data: CarPrediction):
+
+    features = np.array(
+        [
+            [
+                data.symboling,
+                data.fueltype,
+                data.aspiration,
+                data.doornumber,
+                data.carbody,
+                data.drivewheel,
+                data.enginelocation,
+                data.wheelbase,
+                data.carlength,
+                data.carwidth,
+                data.carheight,
+                data.curbweight,
+                data.enginetype,
+                data.cylindernumber,
+                data.enginesize,
+                data.fuelsystem,
+                data.boreratio,
+                data.stroke,
+                data.compressionratio,
+                data.horsepower,
+                data.peakrpm,
+                data.citympg,
+                data.highwaympg,
+            ]
+        ]
+    )
+
+    model = joblib.load("./models/sklearn_gbr.pkl")
+
+    predictions = model.predict(features)
+    value = str(predictions)[1:-1]
+    return {f"The price of your car is {value}$"}

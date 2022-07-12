@@ -6,7 +6,7 @@ from kivy.network.urlrequest import UrlRequest
 import certifi as cfi
 
 
-Builder_string = '''
+Builder_string = """
 ScreenManager:
     Main:
 <Main>:
@@ -117,7 +117,7 @@ ScreenManager:
         pos_hint: {'center_x':0.5, 'center_y':0.1}
         text: 'Predict'
         on_press: app.predict()
-'''
+"""
 
 
 class Main(Screen):
@@ -125,7 +125,7 @@ class Main(Screen):
 
 
 sm = ScreenManager()
-sm.add_widget(Main(name='main'))
+sm.add_widget(Main(name="main"))
 
 
 class MainApp(MDApp):
@@ -134,23 +134,23 @@ class MainApp(MDApp):
         return self.help_string
 
     def predict(self):
-        acousticness = self.help_string.get_screen('main').ids.input_1.text
-        danceability = self.help_string.get_screen('main').ids.input_2.text
-        energy = self.help_string.get_screen('main').ids.input_3.text
-        instrumentalness = self.help_string.get_screen('main').ids.input_4.text
-        liveness = self.help_string.get_screen('main').ids.input_5.text
-        speechiness = self.help_string.get_screen('main').ids.input_6.text
-        tempo = self.help_string.get_screen('main').ids.input_7.text
-        valence = self.help_string.get_screen('main').ids.input_8.text
-        url = f'https://kivymlapp.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}'
+        acousticness = self.help_string.get_screen("main").ids.input_1.text
+        danceability = self.help_string.get_screen("main").ids.input_2.text
+        energy = self.help_string.get_screen("main").ids.input_3.text
+        instrumentalness = self.help_string.get_screen("main").ids.input_4.text
+        liveness = self.help_string.get_screen("main").ids.input_5.text
+        speechiness = self.help_string.get_screen("main").ids.input_6.text
+        tempo = self.help_string.get_screen("main").ids.input_7.text
+        valence = self.help_string.get_screen("main").ids.input_8.text
+        url = f"https://kivymlapp.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
         self.request = UrlRequest(
-            url=url, on_success=self.res, ca_file=cfi.where(), verify=True)
+            url=url, on_success=self.res, ca_file=cfi.where(), verify=True
+        )
 
     def res(self, *args):
         self.data = self.request.result
         ans = self.data
-        self.help_string.get_screen(
-            'main').ids.output_text.text = ans['prediction']
+        self.help_string.get_screen("main").ids.output_text.text = ans["prediction"]
 
 
 MainApp().run()

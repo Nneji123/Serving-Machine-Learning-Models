@@ -36,8 +36,9 @@ import pandas as pd
 
 
 svc = bentoml.Service("pycaret", runners=[runner])
+
+
 @svc.api(input=NumpyNdarray(), output=NumpyNdarray())
 def predict(input_series: np.ndarray) -> np.ndarray:
     result = runner.predict.run(input_series)
     return result
-
