@@ -12,8 +12,8 @@ RUN apt-get -y update  && apt-get install -y \
 RUN pip install --upgrade setuptools 
     
 
-COPY requirements_api.txt .
-RUN pip install -r requirements_api.txt
+COPY requirements.txt .
+RUN pip install -r requirements.txt
 
 COPY . .
 

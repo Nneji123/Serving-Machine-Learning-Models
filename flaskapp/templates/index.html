@@ -4,10 +4,9 @@
 
 <head>
   <meta charset="UTF-8">
-  <head>
-    <title></title>
-    <link rel="stylesheet" href="{{ url_for('static', path='/w3.css') }}">
-  </head>
+  <title>Car Price Prediction ML App</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='w3.css') }}">
   <style type="text/css">
     .mySlides {
       display: none;
@@ -17,8 +16,8 @@
 
 <body>
 
-  <div class='w3-padding w3-teal w3-center'>
-    <h1>Interest Calculator</h1>
+  <div class='w3-padding w3-black w3-center'>
+    <h1>Car Price Prediction ML App</h1>
   </div>
   <div class="w3-container">
     <div class="w3-padding-18 w3-content w3-section w3-threequarter">
@@ -29,27 +28,71 @@
   </div>
 
   <div class="w3-container">
-    <form class="w3-container w3-card-2" method="POST" style="width: 100%">
-      <h2 class="w3-text-blue w3-center w3-text-teal">Input Your Details</h2>
+    <form class="w3-container w3-card-2" action="{{ url_for('predict')}}" method="POST" style="width: 100%">
+      <h2 class="w3-text-blue w3-center w3-text-black">Input Your Details</h2>
       <p>
-        <label class="w3-text-teal"><b>Name</b></label>
-        <input id="id1" class="w3-input w3-border" name="name" placeholder="Name" required="required" type="text">
+        <label class="w3-text-black"><b>Anaemia</b></label>
+        <input id="id1" class="w3-input w3-border" name="anaemia"
+          placeholder="Enter 1 for Anaemic and 0 for not Anaemic" required="required" type="number">
       </p>
       <p>
-        <label class="w3-text-teal"><b>Principal</b></label>
-        <input id="char" class="w3-input w3-border" name="principal" type="number" placeholder="Principal"
+        <label class="w3-text-black"><b>Sex</b></label>
+        <input id="char" class="w3-input w3-border" name="sex" type="number"
+          placeholder="Enter 0 for Female and 1 for Male" required="required">
+      </p>
+      <label class="w3-text-black"><b>Age</b></label>
+      <input id="id1" class="w3-input w3-border" name="age" type="number" placeholder="Age" required="required"></p>
+      <p>
+        <label class="w3-text-black"><b>Creatinine Phosphokinase Level</b></label>
+        <input id="id1" class="w3-input w3-border" name="creatinine_phos" placeholder="Creatinine Phosphokinase Level"
+          type="number" required="required">
+      </p>
+      <label class="w3-text-black"><b>Diabetes</b></label>
+      <input id="id1" class="w3-input w3-border" name="diabetes"
+        placeholder="Enter 1 for Diabetic and 0 for Not Diabetic" type="number" required="required"></p>
+      <p>
+        <label class="w3-text-black"><b>Ejection Level</b></label>
+        <input id="id1" class="w3-input w3-border" name="ejection" placeholder="Ejection Fraction" type="number"
           required="required">
       </p>
-      <label class="w3-text-teal"><b>rate</b></label>
-      <input id="id1" class="w3-input w3-border" name="rate" placeholder="rate" type="number" required="required"></p>
       <p>
-        <label class="w3-text-teal"><b>Time</b></label>
-        <input id="id1" class="w3-input w3-border" name="time" placeholder="Time" type="number"
-          required="required">
+      <p>
+        <label class="w3-text-black"><b>Time</b></label>
+        <input id="id1" class="w3-input w3-border" name="time" placeholder="Time" type="number" required="required">
+      </p>
+      <p>
+
+        <label class="w3-text-black"><b>Blood Pressure</b></label>
+        <input id="id1" class="w3-input w3-border" name="hbp"
+          placeholder="Enter 1 for high blood pressure and 0 for low blood pressure" required="required" type="number">
+      </p>
+      <p>
+      <p>
+        <label class="w3-text-black"><b>Platelets</b></label>
+        <input id="id1" class="w3-input w3-border" name="plat" placeholder="Platelets" required="required"
+          type="number">
+      </p>
+      <p>
+      <p>
+        <label class="w3-text-black"><b>Serum Creatinine Level</b></label>
+        <input id="id1" class="w3-input w3-border" name="serum_creatinine" placeholder="Serum Creatinine Level"
+          required="required" type="number">
+      </p>
+      <p>
+      <p>
+        <label class="w3-text-black"><b>Serum Sodium Level</b></label>
+        <input id="id1" class="w3-input w3-border" name="serum_sodium" placeholder="Serum Sodium Level"
+          required="required" type="number">
+      </p>
+      <p>
+      <p>
+        <label class="w3-text-black"><b>Smoking</b></label>
+        <input id="id1" class="w3-input w3-border" name="smoking"
+          placeholder="Enter 1 if you smoke and 0 if you don't smoke" required="required" type="number">
       </p>
       <p>
         <button onclick="myFunction()" type="submit"
-          class="btn btn-primary btn-block btn-large w3-text-teal w3-border-teal" style="width:100%;">Result</button>
+          class="btn btn-primary btn-block btn-large w3-text-black w3-border-black" style="width:100%;">Predict</button>
     </form>
   </div>
 
@@ -60,7 +103,7 @@
   <div class="footer-dark">
     <footer>
       <div class="container">
-        <p class='w3-padding w3-teal w3-center'>Made by Ifeanyi Nneji © 2022</p>
+        <p class='w3-padding w3-black w3-center'>Made by Ifeanyi Nneji © 2022</p>
       </div>
     </footer>
   </div>

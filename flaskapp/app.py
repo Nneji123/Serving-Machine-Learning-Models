@@ -24,6 +24,30 @@ def predict():
         sex = float(request.form["sex"])
         smoking = float(request.form["smoking"])
         time = float(request.form["time"])
+        symboling = int(request.form["symboling"])
+        fueltype = int(request.form["fueltype"])
+        aspiration = float(request.form["aspiration"])
+        doornumber = float(request.form["doornumber"])
+        carbody = float(request.form)
+        drivewheel = float
+        enginelocation = float
+        wheelbase = float
+        carlength = int
+        carwidth = int
+        carheight = float
+        curbweight = float
+        enginetype = float
+        cylindernumber = float
+        enginesize = float
+        fuelsystem = float
+        boreratio = int
+        stroke = int
+        compressionratio = float
+        horsepower = float
+        peakrpm = float
+        citympg = float
+        highwaympg = float
+
         predicts = utils.predict_price(
             age,
             anaemia,
@@ -39,12 +63,8 @@ def predict():
             time,
         )
         value = str(predicts)[1:-1]
-        if value == 1:
-            res = "Positive"
-        else:
-            res = "Negative"
     return render_template(
-        "result.html", prediction_text="Predicted Outcome: {}".format(value)
+        "result.html", prediction_text=f"The Price of the Car is: {value}"
     )
 
 

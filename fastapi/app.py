@@ -5,12 +5,14 @@ from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 from models import *
 import numpy as np
-from sklearn.ensemble import GradientBoostingRegressor
 
 # 2. Create the app object
-app = FastAPI(title="Car Price Prediction API",
+app = FastAPI(
+    title="Car Price Prediction API",
     description="""An API that utilises a Machine Learning model to predict the price of a given car make and model based on various features.""",
-    version="0.0.1", debug=True)
+    version="0.0.1",
+    debug=True,
+)
 
 
 @app.get("/", response_class=PlainTextResponse)
