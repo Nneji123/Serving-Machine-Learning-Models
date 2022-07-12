@@ -1,0 +1,7 @@
+pycaret
+fastapi[all]
+flask
+streamlit
+kivymd
+pandas 
+bentoml
