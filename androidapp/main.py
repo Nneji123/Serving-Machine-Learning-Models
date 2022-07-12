@@ -5,14 +5,26 @@ from kivy.core.window import Window
 from kivy.network.urlrequest import UrlRequest
 import certifi as cfi
 
+from kivymd.app import MDApp
+from kivy.lang import Builder
+from kivy.properties import ObjectProperty
+from kivy.network.urlrequest import UrlRequest
+from kivymd.uix.menu import MDDropdownMenu
+from kivymd.uix.dialog import MDDialog
+from kivymd.uix.datatables import MDDataTable
+from kivy.metrics import dp
+import webbrowser
+import certifi as cfi
 
 Builder_string = """
 ScreenManager:
     Main:
 <Main>:
+
+
     name : 'main'
     MDLabel:
-        text: 'Music Genre Predictor'
+        text: 'Car Price Prediction App'
         halign: 'center'
         pos_hint: {'center_y':0.9}
         font_style: 'H3'
@@ -142,7 +154,7 @@ class MainApp(MDApp):
         speechiness = self.help_string.get_screen("main").ids.input_6.text
         tempo = self.help_string.get_screen("main").ids.input_7.text
         valence = self.help_string.get_screen("main").ids.input_8.text
-        url = f"https://kivymlapp.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
+        url = f"https://.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
         self.request = UrlRequest(
             url=url, on_success=self.res, ca_file=cfi.where(), verify=True
         )
