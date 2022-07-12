@@ -3,5 +3,6 @@ fastapi[all]
 flask
 streamlit
 kivymd
+kivy
 pandas 
 bentoml

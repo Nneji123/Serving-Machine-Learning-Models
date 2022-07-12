@@ -1,0 +1,13 @@
+service: "service:svc" # where the bentoml.Service instance is defined
+include:
+  - "*.py"
+exclude:
+  - "tests/"
+python:
+  packages:
+    - numpy
+    - pandas
+    - pycaret
+docker:
+  distro: debian
+  cuda_version: 11.6.2
