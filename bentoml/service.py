@@ -1,44 +1,56 @@
 import bentoml
+import bentoml.sklearn
+from bentoml.io import NumpyNdarray, PandasDataFrame
+
+import pickle
+import numpy as np
 import pandas as pd
 
-# from pycaret.datasets import get_data
-# from pycaret.classification import setup as pycaret_setup
-# from pycaret.classification import save_model
-# from pycaret.classification import tune_model
-# from pycaret.classification import create_model
-# from pycaret.classification import predict_model
-# from pycaret.classification import finalize_model
+# Load processors 
 
-# dataset = pd.read_csv("./Data/cars.csv")
-# data = dataset.sample(frac=0.95, random_state=786)
-# data_unseen = dataset.drop(data.index)
-# data.reset_index(inplace=True, drop=True)
-# data_unseen.reset_index(inplace=True, drop=True)
+predictor = bentoml.sklearn.load_runner("gbr:latest")
 
-# pycaret_setup(data=data, target="default", session_id=123, silent=True)
-# gbr = create_model("gbr")
-# boosted_dt = ensemble_model(gbr, method='Boosting')
-# final_dt = finalize_model(boosted_dt)
+service = bentoml.Service(
+    "gbr", runners=[predictor]
+)
 
-# # `save` a given classifier and retrieve coresponding tag:
-# tag = bentoml.pycaret.save("reg", final_dt)
+# Create an API function
+@service.api(input=PandasDataFrame(), output=NumpyNdarray())
+def predict(df: pd.DataFrame) -> np.ndarray:
 
-# # retrieve metadata with `bentoml.models.get`:
-# metadata = bentoml.models.get(tag)
+   # Process data
+    df = pd.read_csv("./Data/cars.csv", usecols=["symboling",
+        "fueltype",
+        "aspiration",
+        "doornumber",
+        "carbody",
+        "drivewheel",
+        "enginelocation",
+        "wheelbase",
+        "carlength",
+        "carwidth",
+        "carheight",
+        "curbweight",
+        "enginetype",
+        "cylindernumber",
+        "enginesize",
+        "fuelsystem",
+        "boreratio",
+        "stroke",
+        "compressionratio",
+        "horsepower",
+        "peakrpm",
+        "citympg",
+        "highwaympg",
+        "price"])
+    data = pd.DataFrame(df)
+    # scaled_df = pd.DataFrame([scaler.run(df)], columns=df.columns)
+    # processed = pd.DataFrame(
+    #     [pca.run(scaled_df)], columns=["col1", "col2", "col3"]
+    # )
 
-# # `load` the model back in memory:
-# model = bentoml.pycaret.load("reg:latest")
+    # Predict
+    result = predictor.run(data)
+    return np.array(result)
 
-# # Run a given model under `Runner` abstraction with `load_runner`
-# input_data = pd.from_csv("./Data/cars.csv")
-# runner = bentoml.pycaret.load_runner(tag)
-# runner.run(pd.DataFrame("./Data/cars.csv"))
-
-
-svc = bentoml.Service("pycaret", runners=[runner])
-
-
-@svc.api(input=NumpyNdarray(), output=NumpyNdarray())
-def predict(input_series: np.ndarray) -> np.ndarray:
-    result = runner.predict.run(input_series)
-    return result
+    # use the command : bentoml serve service.py:service --reload to load the swagger ui docs
