@@ -30,89 +30,254 @@ ScreenManager:
         font_style: 'H3'
 
     MDLabel:
-        text: 'Acousticness'
+        text: 'Symboling'
         pos_hint: {'center_y':0.75}
 
     MDTextField:
         id: input_1
-        hint_text: '(0.0000009491 - 0.9957965)'
+        hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.75, 'center_x':0.5}
 
     MDLabel:
-        text: 'Danceability'
+        text: 'Fuel Type'
         pos_hint: {'center_y':0.68}
 
     MDTextField:
         id: input_2
-        hint_text: '(0.051307 - 0.961871)'
+        hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.68, 'center_x':0.5}
 
     MDLabel:
-        text: 'Energy'
+        text: 'Aspiration'
         pos_hint: {'center_y':0.61}
 
     MDTextField:
         id: input_3
-        hint_text: '(0.000279 - 0.999768)'
+        hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.61, 'center_x':0.5}
 
     MDLabel:
-        text: 'Instrumentalness'
+        text: 'Door Number'
         pos_hint: {'center_y':0.54}
 
     MDTextField:
         id: input_4
-        hint_text: '(0 - 0.993134)'
+        hint_text: '(0.0 - 4)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.54, 'center_x':0.5}
 
     MDLabel:
-        text: 'Liveness'
+        text: 'Car body'
         pos_hint: {'center_y':0.47}
 
     MDTextField:
         id: input_5
-        hint_text: '(0.025297 - 0.971392)'
+        hint_text: '(0.0 - 20.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.47, 'center_x':0.5}
 
     MDLabel:
-        text: 'Speechiness'
+        text: 'Drivewheel'
         pos_hint: {'center_y':0.40}
 
     MDTextField:
         id: input_6
-        hint_text: '(0.023234 - 0.966177)'
+        hint_text: '(0.0 - 1.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.40, 'center_x':0.5}
 
     MDLabel:
-        text: 'Tempo'
+        text: 'Engine Location'
         pos_hint: {'center_y':0.33}
 
     MDTextField:
         id: input_7
-        hint_text: '(29.093000 - 250.059000)'
+        hint_text: '(0.0 - 2.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.33, 'center_x':0.5}
 
     MDLabel:
-        text: 'Valence'
+        text: 'Wheel Base'
         pos_hint: {'center_y':0.26}
 
     MDTextField:
         id: input_8
-        hint_text: '(0.014392 - 0.983649)'
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+    
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_9
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_10
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_11
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_12
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_13
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_14
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_15
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_16
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_17
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_18
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_19
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_20
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_21
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_22
+        hint_text: '(0.0 - 3.0)'
+        width: 100
+        size_hint_x: None
+        pos_hint: {'center_y':0.26, 'center_x':0.5}
+
+    MDLabel:
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.26}
+
+    MDTextField:
+        id: input_23
+        hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
         pos_hint: {'center_y':0.26, 'center_x':0.5}
