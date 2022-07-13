@@ -38,29 +38,16 @@ def predict(data: CarPrediction):
     features = np.array(
         [
             [
-                data.symboling,
-                data.fueltype,
-                data.aspiration,
-                data.doornumber,
-                data.carbody,
-                data.drivewheel,
-                data.enginelocation,
-                data.wheelbase,
-                data.carlength,
-                data.carwidth,
-                data.carheight,
-                data.curbweight,
-                data.enginetype,
-                data.cylindernumber,
                 data.enginesize,
-                data.fuelsystem,
-                data.boreratio,
-                data.stroke,
-                data.compressionratio,
+                data.curbweight,
                 data.horsepower,
-                data.peakrpm,
-                data.citympg,
                 data.highwaympg,
+                data.carwidth,
+                data.wheelbase,
+                data.drivewheel,
+                data.citympg,
+                data.boreratio,
+                data.cylindernumber
             ]
         ]
     )
