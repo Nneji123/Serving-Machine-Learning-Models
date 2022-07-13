@@ -1,8 +1,5 @@
-pycaret
-fastapi[all]
 flask
-streamlit
-kivymd
-kivy
-pandas 
-bentoml
+fastapi[all]
+numpy
+pandas
+pytest
