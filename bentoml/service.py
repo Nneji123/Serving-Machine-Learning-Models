@@ -10,39 +10,24 @@ import pandas as pd
 
 predictor = bentoml.sklearn.load_runner("gbr:latest")
 
-service = bentoml.Service(
-    "gbr", runners=[predictor]
-)
+service = bentoml.Service("gbr", runners=[predictor])
 
 # Create an API function
 @service.api(input=PandasDataFrame(), output=NumpyNdarray())
 def predict(df: pd.DataFrame) -> np.ndarray:
 
    # Process data
-    df = pd.read_csv("./Data/cars.csv", usecols=["symboling",
-        "fueltype",
-        "aspiration",
-        "doornumber",
-        "carbody",
-        "drivewheel",
-        "enginelocation",
-        "wheelbase",
-        "carlength",
-        "carwidth",
-        "carheight",
-        "curbweight",
-        "enginetype",
-        "cylindernumber",
+    df = pd.read_csv("./Data/cars.csv", usecols=[
         "enginesize",
-        "fuelsystem",
-        "boreratio",
-        "stroke",
-        "compressionratio",
+        "curbweight",
         "horsepower",
-        "peakrpm",
-        "citympg",
         "highwaympg",
-        "price"])
+        "carwidth",
+        "wheelbase",
+        "drivewheel",
+        "citympg",
+        "boreratio",
+        "cylindernumber"])
     data = pd.DataFrame(df)
     # scaled_df = pd.DataFrame([scaler.run(df)], columns=df.columns)
     # processed = pd.DataFrame(
@@ -50,7 +35,7 @@ def predict(df: pd.DataFrame) -> np.ndarray:
     # )
 
     # Predict
-    result = predictor.run(data)
+    result = predictor.run(df)
     return np.array(result)
 
     # use the command : bentoml serve service.py:service --reload to load the swagger ui docs

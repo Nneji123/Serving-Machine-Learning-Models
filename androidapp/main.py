@@ -1,26 +1,15 @@
 from kivymd.app import MDApp
 from kivy.lang.builder import Builder
 from kivy.uix.screenmanager import Screen, ScreenManager
-from kivy.core.window import Window
-from kivy.network.urlrequest import UrlRequest
 import certifi as cfi
+import requests as re
+import json
 
-from kivymd.app import MDApp
-from kivy.lang import Builder
-from kivy.properties import ObjectProperty
-from kivy.network.urlrequest import UrlRequest
-from kivymd.uix.menu import MDDropdownMenu
-from kivymd.uix.dialog import MDDialog
-from kivymd.uix.datatables import MDDataTable
-from kivy.metrics import dp
-import webbrowser
-import certifi as cfi
 
 Builder_string = """
 ScreenManager:
     Main:
 <Main>:
-
 
     name : 'main'
     MDLabel:
@@ -30,8 +19,8 @@ ScreenManager:
         font_style: 'H3'
 
     MDLabel:
-        text: 'Symboling'
-        pos_hint: {'center_y':0.75}
+        text: 'Engine Size'
+        pos_hint: {'center_y':0.75, 'center_x':0.55}
 
     MDTextField:
         id: input_1
@@ -41,8 +30,8 @@ ScreenManager:
         pos_hint: {'center_y':0.75, 'center_x':0.5}
 
     MDLabel:
-        text: 'Fuel Type'
-        pos_hint: {'center_y':0.68}
+        text: 'Curb Weight'
+        pos_hint: {'center_y':0.68, 'center_x':0.55}
 
     MDTextField:
         id: input_2
@@ -52,8 +41,8 @@ ScreenManager:
         pos_hint: {'center_y':0.68, 'center_x':0.5}
 
     MDLabel:
-        text: 'Aspiration'
-        pos_hint: {'center_y':0.61}
+        text: 'Horsepower'
+        pos_hint: {'center_y':0.61, 'center_x':0.55}
 
     MDTextField:
         id: input_3
@@ -63,8 +52,8 @@ ScreenManager:
         pos_hint: {'center_y':0.61, 'center_x':0.5}
 
     MDLabel:
-        text: 'Door Number'
-        pos_hint: {'center_y':0.54}
+        text: 'Highway Miles Per Gallon'
+        pos_hint: {'center_y':0.54, 'center_x':0.55}
 
     MDTextField:
         id: input_4
@@ -74,8 +63,8 @@ ScreenManager:
         pos_hint: {'center_y':0.54, 'center_x':0.5}
 
     MDLabel:
-        text: 'Car body'
-        pos_hint: {'center_y':0.47}
+        text: 'Car Width'
+        pos_hint: {'center_y':0.47, 'center_x':0.55}
 
     MDTextField:
         id: input_5
@@ -85,8 +74,8 @@ ScreenManager:
         pos_hint: {'center_y':0.47, 'center_x':0.5}
 
     MDLabel:
-        text: 'Drivewheel'
-        pos_hint: {'center_y':0.40}
+        text: 'Wheel Base'
+        pos_hint: {'center_y':0.40, 'center_x':0.55}
 
     MDTextField:
         id: input_6
@@ -96,8 +85,8 @@ ScreenManager:
         pos_hint: {'center_y':0.40, 'center_x':0.5}
 
     MDLabel:
-        text: 'Engine Location'
-        pos_hint: {'center_y':0.33}
+        text: 'Drive Wheel'
+        pos_hint: {'center_y':0.33, 'center_x':0.55}
 
     MDTextField:
         id: input_7
@@ -107,8 +96,8 @@ ScreenManager:
         pos_hint: {'center_y':0.33, 'center_x':0.5}
 
     MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
+        text: 'City MPG'
+        pos_hint: {'center_y':0.26, 'center_x':0.55}
 
     MDTextField:
         id: input_8
@@ -118,169 +107,27 @@ ScreenManager:
         pos_hint: {'center_y':0.26, 'center_x':0.5}
     
     MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
+        text: 'Bore Ratio'
+        pos_hint: {'center_y':0.20, 'center_x':0.55}
 
     MDTextField:
         id: input_9
         hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
+        pos_hint: {'center_y':0.20, 'center_x':0.5}
 
     MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
+        text: 'Cylinder Number'
+        pos_hint: {'center_y':0.14, 'center_x':0.55}
 
     MDTextField:
         id: input_10
         hint_text: '(0.0 - 3.0)'
         width: 100
         size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
+        pos_hint: {'center_y':0.16, 'center_x':0.5}
 
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_11
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_12
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_13
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_14
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_15
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_16
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_17
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_18
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_19
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_20
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_21
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_22
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
-
-    MDLabel:
-        text: 'Wheel Base'
-        pos_hint: {'center_y':0.26}
-
-    MDTextField:
-        id: input_23
-        hint_text: '(0.0 - 3.0)'
-        width: 100
-        size_hint_x: None
-        pos_hint: {'center_y':0.26, 'center_x':0.5}
 
     MDLabel:
         pos_hint: {'center_y':0.2}
@@ -311,23 +158,38 @@ class MainApp(MDApp):
         return self.help_string
 
     def predict(self):
-        acousticness = self.help_string.get_screen("main").ids.input_1.text
-        danceability = self.help_string.get_screen("main").ids.input_2.text
-        energy = self.help_string.get_screen("main").ids.input_3.text
-        instrumentalness = self.help_string.get_screen("main").ids.input_4.text
-        liveness = self.help_string.get_screen("main").ids.input_5.text
-        speechiness = self.help_string.get_screen("main").ids.input_6.text
-        tempo = self.help_string.get_screen("main").ids.input_7.text
-        valence = self.help_string.get_screen("main").ids.input_8.text
-        url = f"https://carpriceapi.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
-        self.request = UrlRequest(
-            url=url, on_success=self.res, ca_file=cfi.where(), verify=True
-        )
+        enginesize = self.help_string.get_screen("main").ids.input_1.text
+        curbweight = self.help_string.get_screen("main").ids.input_2.text
+        horsepower = self.help_string.get_screen("main").ids.input_3.text
+        highwaympg = self.help_string.get_screen("main").ids.input_4.text
+        carwidth = self.help_string.get_screen("main").ids.input_5.text
+        wheelbase = self.help_string.get_screen("main").ids.input_6.text
+        drivewheel = self.help_string.get_screen("main").ids.input_7.text
+        citympg = self.help_string.get_screen("main").ids.input_8.text
+        boreratio = self.help_string.get_screen("main").ids.input_9.text
+        cylindernumber = self.help_string.get_screen("main").ids.input_10.text
+        values = {
+            "enginesize": enginesize,
+            "curbweight": curbweight,
+            "horsepower": horsepower,
+            "highwaympg": highwaympg,
+            "carwidth": carwidth,
+            "wheelbase": wheelbase,
+            "drivewheel": drivewheel,
+            "citympg": citympg,
+            "boreratio": boreratio,
+            "cylindernumber": cylindernumber
+        }
+        url = f"https://carpriceapi.herokuapp.com/predict/"
+        self.request = re.post(url=url, json=values)
+        self.request = json.dumps(self.request.json())
+        self.request = json.loads(self.request)
 
     def res(self, *args):
-        self.data = self.request.result
+        self.data = self.request
         ans = self.data
-        self.help_string.get_screen("main").ids.output_text.text = ans["prediction"]
+        self.help_string.get_screen(
+            "main").ids.output_text.text = ans
 
 
 MainApp().run()

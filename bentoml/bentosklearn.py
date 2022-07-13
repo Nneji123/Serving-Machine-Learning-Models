@@ -6,32 +6,17 @@ from sklearn.model_selection import train_test_split
 
 dataset = pd.read_csv(
     "./Data/cars.csv",
-    usecols=[
-        "symboling",
-        "fueltype",
-        "aspiration",
-        "doornumber",
-        "carbody",
-        "drivewheel",
-        "enginelocation",
-        "wheelbase",
-        "carlength",
-        "carwidth",
-        "carheight",
+        usecols=["enginesize",
         "curbweight",
-        "enginetype",
-        "cylindernumber",
-        "enginesize",
-        "fuelsystem",
-        "boreratio",
-        "stroke",
-        "compressionratio",
         "horsepower",
-        "peakrpm",
-        "citympg",
         "highwaympg",
-        "price",
-    ],
+        "carwidth",
+        "wheelbase",
+        "drivewheel",
+        "citympg",
+        "boreratio",
+        "cylindernumber",
+        "price"]
 )
 
 # get all categorical columns in the dataframe
