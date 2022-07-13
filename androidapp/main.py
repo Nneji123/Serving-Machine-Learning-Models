@@ -319,7 +319,7 @@ class MainApp(MDApp):
         speechiness = self.help_string.get_screen("main").ids.input_6.text
         tempo = self.help_string.get_screen("main").ids.input_7.text
         valence = self.help_string.get_screen("main").ids.input_8.text
-        url = f"https://.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
+        url = f"https://carpriceapi.herokuapp.com/predict?acousticness={acousticness}&danceability={danceability}&energy={energy}&instrumentalness={instrumentalness}&liveness={liveness}&speechiness={speechiness}&tempo={tempo}&valence={valence}"
         self.request = UrlRequest(
             url=url, on_success=self.res, ca_file=cfi.where(), verify=True
         )
