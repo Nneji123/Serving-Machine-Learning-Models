@@ -1,0 +1,15 @@
+artifact_uri: file:///workspace/Stackoverflow-Salary-Prediction/mlflow/mlruns/0/f6aeeb22a768414e81e1825e8b65c728/artifacts
+end_time: 1657695678397
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+name: ''
+run_id: f6aeeb22a768414e81e1825e8b65c728
+run_uuid: f6aeeb22a768414e81e1825e8b65c728
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1657695675654
+status: 3
+tags: []
+user_id: gitpod

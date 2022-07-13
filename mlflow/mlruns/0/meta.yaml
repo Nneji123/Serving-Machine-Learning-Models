@@ -1,0 +1,5 @@
+artifact_location: file:///workspace/Stackoverflow-Salary-Prediction/mlflow/mlruns/0
+experiment_id: '0'
+lifecycle_stage: active
+name: Car Prediction
+tags: {}
