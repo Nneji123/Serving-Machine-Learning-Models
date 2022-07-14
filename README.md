@@ -211,12 +211,12 @@ Generate repo structure with 'tree' command in linux. generate toc  npm install 
 └── vercel.json
 ```
 
-## Getting Started
+## Getting Started⚡
 Before we get into building and deploying our models we'll have to setup our environment. I use 'pyenv' for managing different versions of python and pyenv-virtualenv for setting up virtual environments. You can learn how to install pyenv on your operating system by checking out their official [github](https://github.com/pyenv/pyenv). Also it's important you have git installed on your system so you can easily clone this repository. If you're on Linux you can install git by running this command:
 ```
 sudo apt-get install git
 ```
-### Configuring Python Environment
+### Configuring Python Environment⚡
 To easily setup our environment I've created a shell script named **'setup.sh'** for easily installing and configuring pyenv on your system. It's assumed we are working with Linux but there are ways to install pyenv on windows too. To install pyenv easily with the shell script run the following commands in your terminal:
 1. Clone this repository:
 ```bash
@@ -243,9 +243,9 @@ cd fastapi
 pip install -r requirement.txt
 ```
 Same goes for the other projects in this repository as well.
-## Building Machine Learning Model: Car Price Prediction
+## Building Machine Learning Model: Car Price Prediction⚡
 In this project we will be building a machine learning regression model that can predict the price of a car based on some features. The dataset used can be found on [Kaggle]() and can also be found in this [repository](https://github.com/Nneji123/Serving-Machine-Learning-Models/blob/master/Data/cars.csv). You can check out the notebooks [folder](https://github.com/Nneji123/Serving-Machine-Learning-Models/tree/master/Notebooks) which contains the notebook used for analysing and visualising the data and building our model.
-### How to save Models with Joblib
+### How to save Models with Joblib⚡
 Joblib is a set of tools to provide lightweight pipelining in Python. You can read more about Joblib [here](https://joblib.readthedocs.io/en/latest/). To save our model I used joblib to save the model as a pickle file(.pkl) so we can later use the model to make predictions. To save your models(assuming you've built a model) you can do that by running:
 ```python
 import joblib
@@ -266,7 +266,7 @@ In this section we will be serving our models as applications using these framew
 5. Streamlit
 6. KivyMD
 
-### Serving Models with FastAPI
+### Serving Models with FastAPI⚡
 FastAPI is a modern, fast (high-performance), web framework for building APIs with Python 3.6+ based on standard Python type hints.
 
 The key features are:
@@ -291,7 +291,7 @@ uvicorn app:app --reload
 You should be able to view the API on your browser by visiting http://127.0.0.1:8000/
 
 In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn how to serve your model as a RESTful API with FastAPI.
-### Serving Models with Flask
+### Serving Models with Flask⚡
 Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools.
 
 To serve models with flask I've created a template in this repository in which I deployed the car price prediction model as a web app with basic html and css. To run that project locally on your system run the following:
@@ -301,7 +301,7 @@ pip install -r requirements.txt
 python app.py
 ```
 You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
-### Serving Models with BentoML
+### Serving Models with BentoML⚡
 BentoML is a Python open-source library that enables users to create a machine learning-powered prediction service in minutes, which helps to bridge the gap between data science and DevOps.
 
 To serve models with Bentoml I've created a template in this repository in which I deployed the car price prediction model as an API with Bentoml. To run that project locally on your system run the following:
@@ -312,7 +312,7 @@ python bentosklearn.py
 bentoml serve service.py:service --reload
 ```
 You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
-### Serving Models with Mlflow
+### Serving Models with Mlflow⚡
 MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models. MLflow offers a set of lightweight APIs that can be used with any existing machine learning application or library (TensorFlow, PyTorch, XGBoost, etc), wherever you currently run ML code (e.g. in notebooks, standalone applications or the cloud). 
 
 To serve models with mlflow I've created a template in this repository in which I deployed the car price prediction model as an API with mlflow. To run that project locally on your system run the following:
@@ -325,7 +325,7 @@ Then you can run this command below to view the Mlflow User Interface:
 ```bash
 mlflow ui
 ```
-### Serving Models with Streamlit
+### Serving Models with Streamlit⚡
 Streamlit is an open source app framework in Python language. It helps us create web apps for data science and machine learning in a short time. It is compatible with major Python libraries such as scikit-learn, Keras, PyTorch, SymPy(latex), NumPy, pandas, Matplotlib etc.
 
 To serve models with Streamlit I've created a template in this repository in which I deployed the car price prediction model as a web app with streamlit. To run that project locally on your system run the following:
@@ -335,11 +335,96 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 You should be able to view the web application in your browser with this link http://127.0.0.1:8501/
-### Serving Models as Desktop/ Android Applications
-You can also deploy 
-## How to Test your models and applications with Pytest
-## Deploying your applications to AWS and Heroku
-### Working with Dockerfiles
-## Github Actions
-### Using Github Actions and Heroku for CI/CD 
 
+### Serving Models as Desktop/Mobile Applications⚡
+You can also deploy machine learning models as desktop and mobile applications with frameworks such as [KivyMD](https://github.com/kivymd/KivyMD). You can learn more about deploying models with KivyMD by checking out this [tutorial](https://analyticsindiamag.com/deploying-machine-learning-models-in-android-apps-using-python/). 
+
+I've also created a template application in this repository for deploying the car price prediction model with KivyMD. I also built the applications as an android app with buildozer and github actions which will be explained in later sections. You can check out and install the android applications by checking out the bin folder in the **data** branch of this repository. 
+
+To run that project, run the following commands:
+```bash
+cd androidapp
+pip install -r requirements.txt
+python main.py
+```
+You should see a screen similar to the image below
+## How to Test your models and applications with Pytest⚡
+
+### Working with Docker⚡
+
+## Deploying your applications to AWS and Heroku⚡
+In this repository I've deployed the FastAPI and Flask applications to platforms such as AWS and Heroku.
+I'll be using the **fastapi** folder as an example of deploying applications to both AWS and Heroku.
+
+### Deploy to Heroku⚡
+To deploy the FastAPI application to Heroku run the following commands:
+1. Install the heroku cli
+```bash
+npm install -g heroku
+```
+
+2. Login to Heroku
+```
+heroku login --interactive
+``` 
+3. Change the working directory
+
+```
+cd fastapi
+```
+
+4. Run this command so as to work with just the fastapi folder
+```bash
+git init
+git add .
+git commit -m "first commit"
+```
+
+5. Create the heroku app
+
+``` 
+heroku create your-app-name 
+```
+
+Replace **your-app-name** with the name of your choosing.
+
+6. Set the heroku cli git remote to that app
+
+```
+heroku git:remote your-app-name
+```
+
+7. Set the heroku stack setting to container
+ 
+```
+heroku stack:set container
+```
+
+8. Push to heroku
+```
+git push heroku master
+```
+And you should be able to view your deployed application by following the link e.g https://your-app-name.herokuapp.com
+
+You can also view logs for your deployed application by running:
+```bash
+heroku logs -t -a your-app-name
+```
+
+### Deploy to AWS⚡
+You can also deploy your application using an AWS EC2 instance(Ubuntu) by following the steps below. This is also assuming you have launched your instance, exposed the required ports and installed git in your instance. If you don't know how to do that you can check out this [repository](https://github.com/Nneji123/AWS-EC2-Setup-for-FastAPI-and-Ngrok-Deployment) for more details.
+
+Run the following commands in your AWS EC2 instance:
+```bash
+git clone https://github.com/Nneji123/Serving-Machine-Learning-Models.git
+cd Serving-Machine-Learning-Models/fastapi
+./fastapi-setup.sh
+```
+After running the commands above you can view your deployed application by going to the Public IP address location of your AWS instance. E.g if your public ip address is 3.91.202.12 visit http://3.91.202.12:80/docs to view your deployed API documentation.
+
+## Github Actions⚡
+GitHub Actions makes it easy to automate all your software workflows, now with world-class CI/CD. Build, test, and deploy your code right from GitHub. Make code reviews, branch management, and issue triaging work the way you want.
+
+
+### Using Github Actions and Heroku for CI/CD⚡
+In this repository I've used Github actions to continuously deploy the Flask and FastAPI applications to Heroku i.e whenever I make a push or pull action in this repository the Github action will run and deploy new versions of those applications to Heroku.
