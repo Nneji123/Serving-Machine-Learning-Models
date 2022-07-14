@@ -367,7 +367,11 @@ You should be able to view the web application in your browser with this link ht
 
 You can also check out the streamlit application deployed on streamlit cloud [here](https://nneji123-serving-machine-learn-streamlitappstreamlit-app-hxttb4.streamlitapp.com/) 
 
+#### Screenshot :camera:
+
+
 #### You can also check out my other Streamlit Projects with this [link](https://github.com/search?q=user%3ANneji123+streamlit)
+
 
 ### Serving Models as Desktop/Mobile Applications⚡
 
@@ -489,4 +493,4 @@ In this repository I've used Github actions to continuously deploy the Flask and
 You can read more about using Github actions to automate your workflow [here](https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a)
 
 ## License 
-[MIT]()
+[MIT](https://github.com/Nneji123/Serving-Machine-Learning-Models/LICENSE.md)
