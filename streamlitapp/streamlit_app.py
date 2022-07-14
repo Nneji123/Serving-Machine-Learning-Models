@@ -14,7 +14,7 @@ st.write("""
 """)
 
 
-st.header('# Input Car Details')
+st.header('Input Car Details')
 
 names = st.text_input("""Name of Car""")
 curbweight= st.number_input("""Input Curb Weight""")
