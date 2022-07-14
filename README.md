@@ -368,6 +368,7 @@ You should be able to view the web application in your browser with this link ht
 You can also check out the streamlit application deployed on streamlit cloud [here](https://nneji123-serving-machine-learn-streamlitappstreamlit-app-hxttb4.streamlitapp.com/) 
 
 #### Screenshot :camera:
+![Screenshot (168)](https://user-images.githubusercontent.com/101701760/179064309-54ca0d12-56d6-4205-83e5-52b6646746f5.png)
 
 
 #### You can also check out my other Streamlit Projects with this [link](https://github.com/search?q=user%3ANneji123+streamlit)
