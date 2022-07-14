@@ -56,4 +56,5 @@ def predict(data: CarPrediction):
 
     predictions = model.predict(features)
     value = str(predictions)[1:-1]
-    return {f"The price of your car is {value}$"}
+    #return {f"The price of your car is {value}$"}
+    return {value}
