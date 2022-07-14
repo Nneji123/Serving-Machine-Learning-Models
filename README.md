@@ -1,18 +1,18 @@
-# Serving Machine Learning Models :robot
+# Serving Machine Learning Models :robot:
 
-## About :boom
+## About :boom:
 
 **This repository contains instructions, template source code and examples on how to serve/deploy machine learning models using various frameworks and applications such as Docker, Flask, FastAPI, BentoML, Streamlit, MLflow and even code on how to deploy your machine learning model as an android app.**
 
 **The Repository also has code and how-to's for deploying your apps to various cloud platforms(AWS, Heroku, Vercel etc), working with Github actions for CI/CD(Continuous Integration and Continuous Development), TDD(Test driven development) with pytest and other useful information.**
 
-### Table of Contents :book
+### Table of Contents :book:
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Serving Machine Learning Models :robot](#serving-machine-learning-models-robot)
-  - [About :boom](#about-boom)
-    - [Table of Contents :book](#table-of-contents-book)
+- [Serving Machine Learning Models :robot:](#serving-machine-learning-models-robot)
+  - [About :boom:](#about-boom)
+    - [Table of Contents :book:](#table-of-contents-book)
   - [Repository Structure](#repository-structure)
   - [Getting Started⚡](#getting-started)
     - [Configuring Python Environment⚡](#configuring-python-environment)
@@ -20,11 +20,11 @@
   - [Building Machine Learning Model: Car Price Prediction⚡](#building-machine-learning-model-car-price-prediction)
     - [How to save Models with Joblib⚡](#how-to-save-models-with-joblib)
     - [Version Control your models with DVC(Data Version Control)](#version-control-your-models-with-dvcdata-version-control)
-  - [Creating Applications with your Model :computer](#creating-applications-with-your-model-computer)
+  - [Creating Applications with your Model :computer:](#creating-applications-with-your-model-computer)
     - [Serving Models with FastAPI⚡](#serving-models-with-fastapi)
-      - [Screenshot :camera](#screenshot-camera)
+      - [Screenshot :camera:](#screenshot-camera)
     - [Serving Models with Flask⚡](#serving-models-with-flask)
-      - [Screenshot :camera](#screenshot-camera-1)
+      - [Screenshot :camera:](#screenshot-camera-1)
     - [Serving Models with BentoML⚡](#serving-models-with-bentoml)
     - [Serving Models with Mlflow⚡](#serving-models-with-mlflow)
     - [Serving Models with Streamlit⚡](#serving-models-with-streamlit)
