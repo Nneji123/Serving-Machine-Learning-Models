@@ -1,12 +1,10 @@
-# Serving Machine Learning Models :robot:
-
-## About :boom:
+## About
 
 **This repository contains instructions, template source code and examples on how to serve/deploy machine learning models using various frameworks and applications such as Docker, Flask, FastAPI, BentoML, Streamlit, MLflow and even code on how to deploy your machine learning model as an android app.**
 
 **The Repository also has code and how-to's for deploying your apps to various cloud platforms(AWS, Heroku, Vercel etc), working with Github actions for CI/CD(Continuous Integration and Continuous Development), TDD(Test driven development) with pytest and other useful information.**
 
-### Table of Contents :book:
+### Table of Contents 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
