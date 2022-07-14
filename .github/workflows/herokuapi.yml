@@ -18,4 +18,4 @@ jobs:
           heroku_email: ifeanyinneji777@gmail.com 
           usedocker: true
           stack: container
-          healthcheck: "https://carpriceapi.herokuapp.com/health"
+          
