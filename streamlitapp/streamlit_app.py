@@ -56,3 +56,4 @@ if st.button("Predict Price"):
         st.write("Error! Enter name of car")
     else:
         st.write(f"""### The Price of the {names} is {resp[0]}$.""")
+
