@@ -26,7 +26,3 @@ fi
 sudo pyenv install 3.8.10
 sudo pyenv global 3.8.10
 
-cd fastapi
-pip3 install -r requirements.txt
-sudo apt-get install uvicorn
-uvicorn app:app --reload
