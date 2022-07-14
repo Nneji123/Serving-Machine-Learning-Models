@@ -17,6 +17,7 @@ st.write("""
 st.sidebar.header('Input Car Details')
 
 names = st.sidebar.text_input("""Name of Car""")
+curbweight= st.sidebar.number_input("""Input Curb Weight""")
 enginesize = st.sidebar.number_input("""Input Engine Size""")
 horsepower = st.sidebar.number_input("""Input Horse Power""")
 highwaympg= st.sidebar.number_input("""Input Highway Miles Per Gallon""")
