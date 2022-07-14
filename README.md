@@ -291,7 +291,10 @@ You should be able to view the API on your browser by visiting <http://127.0.0.1
 
 In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn more about how to serve your model as a RESTful API with FastAPI.
 
-#### Screenshot :camera
+#### Screenshot :camera:
+![Screenshot (168)](https://user-images.githubusercontent.com/101701760/179010698-a503a883-bbc3-4af9-9750-48db9d07310f.png)
+
+#### You can also check out other FastAPI applications on my [GitHub](https://github.com/search?q=user%3ANneji123+fastapi)
 
 ### Serving Models with Flask⚡
 
@@ -307,7 +310,9 @@ python app.py
 
 You should be able to view the application on your browser by visiting <http://127.0.0.1:5000/>
 
-#### Screenshot :camera
+#### Screenshot :camera:
+![Screenshot (166)](https://user-images.githubusercontent.com/101701760/179010868-19e1fab0-4a5e-4ea5-9d64-a59918e5e7c2.png)
+
 
 ### Serving Models with BentoML⚡
 
@@ -354,7 +359,9 @@ pip install -r requirements.txt
 streamlit run streamlit_app.py
 ```
 
-You should be able to view the web application in your browser with this link <http://127.0.0.1:8501/>
+You should be able to view the web application in your browser with this link http://127.0.0.1:8501/
+
+#### You can also check out my other Streamlit Projects with this [link](https://github.com/search?q=user%3ANneji123+streamlit)
 
 ### Serving Models as Desktop/Mobile Applications⚡
 
@@ -370,12 +377,14 @@ pip install -r requirements.txt
 python main.py
 ```
 
-You should see a screen similar to the image below
+You should see a screen similar to the image below:
+![Screenshot 2022-07-14 155152](https://user-images.githubusercontent.com/101701760/179011781-460c2f09-cfe2-4212-b32b-ca25b2b14d8e.png)
+
 
 ## How to Test your models and applications with Pytest⚡
+The pytest framework makes it easy to write small, readable tests, and can scale to support complex functional testing for applications and libraries.
 
 ### Working with Docker⚡
-
 Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers.
 
 In this repository I've deployed the FastAPI application using a Dockerfile. You can learn more about working with Docker and writing Dockerfiles [here](https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a)
