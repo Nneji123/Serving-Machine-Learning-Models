@@ -290,7 +290,9 @@ uvicorn app:app --reload
 ```
 You should be able to view the API on your browser by visiting http://127.0.0.1:8000/
 
-In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn how to serve your model as a RESTful API with FastAPI.
+In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn more about how to serve your model as a RESTful API with FastAPI.
+
+#### Screenshot :camera:
 ### Serving Models with Flask⚡
 Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools.
 
@@ -301,6 +303,8 @@ pip install -r requirements.txt
 python app.py
 ```
 You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
+#### Screenshot :camera:
+
 ### Serving Models with BentoML⚡
 BentoML is a Python open-source library that enables users to create a machine learning-powered prediction service in minutes, which helps to bridge the gap between data science and DevOps.
 
@@ -312,6 +316,7 @@ python bentosklearn.py
 bentoml serve service.py:service --reload
 ```
 You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
+
 ### Serving Models with Mlflow⚡
 MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models. MLflow offers a set of lightweight APIs that can be used with any existing machine learning application or library (TensorFlow, PyTorch, XGBoost, etc), wherever you currently run ML code (e.g. in notebooks, standalone applications or the cloud). 
 
@@ -351,6 +356,9 @@ You should see a screen similar to the image below
 ## How to Test your models and applications with Pytest⚡
 
 ### Working with Docker⚡
+Docker is a set of platform as a service products that use OS-level virtualization to deliver software in packages called containers. The service has both free and premium tiers. 
+
+In this repository I've deployed the FastAPI application using a Dockerfile. You can learn more about working with Docker and writing Dockerfiles [here](https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a)
 
 ## Deploying your applications to AWS and Heroku⚡
 In this repository I've deployed the FastAPI and Flask applications to platforms such as AWS and Heroku.
