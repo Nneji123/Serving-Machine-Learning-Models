@@ -289,7 +289,7 @@ uvicorn app:app --reload
 
 You should be able to view the API on your browser by visiting <http://127.0.0.1:8000/>
 
-You can also view the deployed api here https://dashboard.heroku.com/apps/carpriceapi
+You can also view the deployed API here https://dashboard.heroku.com/apps/carpriceapi
 
 In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn more about how to serve your model as a RESTful API with FastAPI.
 
