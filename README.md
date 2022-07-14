@@ -36,6 +36,7 @@
     - [Deploy to AWS⚡](#deploy-to-aws)
   - [Github Actions⚡](#github-actions)
     - [Using Github Actions and Heroku for CI/CD⚡](#using-github-actions-and-heroku-for-cicd)
+  - [License](#license)
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Repository Structure
 ```bash
