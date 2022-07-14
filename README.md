@@ -365,6 +365,8 @@ streamlit run streamlit_app.py
 
 You should be able to view the web application in your browser with this link http://127.0.0.1:8501/
 
+You can also check out the streamlit application deployed on streamlit cloud [here](https://nneji123-serving-machine-learn-streamlitappstreamlit-app-hxttb4.streamlitapp.com/) 
+
 #### You can also check out my other Streamlit Projects with this [link](https://github.com/search?q=user%3ANneji123+streamlit)
 
 ### Serving Models as Desktop/Mobile Applications⚡
