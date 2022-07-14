@@ -471,3 +471,6 @@ GitHub Actions makes it easy to automate all your software workflows, now with w
 In this repository I've used Github actions to continuously deploy the Flask and FastAPI applications to Heroku i.e whenever I make a push or pull action in this repository the Github action will run and deploy new versions of those applications to Heroku. The 'action' files are stored in this [folder](https://github.com/Nneji123/Serving-Machine-Learning-Models/.github/workflows)
 
 You can read more about using Github actions to automate your workflow [here](https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a)
+
+## License 
+[MIT]()
