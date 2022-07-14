@@ -1,31 +1,3 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-**Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
-
-- [About :boom:](#about-boom)
-  - [Table of Contents :book:](#table-of-contents-book)
-- [Repository Structure](#repository-structure)
-- [Getting Started](#getting-started)
-  - [Configuring Python Environment](#configuring-python-environment)
-  - [Installing Dependencies](#installing-dependencies)
-- [Building Machine Learning Model: Car Price Prediction](#building-machine-learning-model-car-price-prediction)
-  - [How to save Models with Joblib](#how-to-save-models-with-joblib)
-  - [Version Control your models with DVC(Data Version Control)](#version-control-your-models-with-dvcdata-version-control)
-- [Creating Applications with your Model :computer:](#creating-applications-with-your-model-computer)
-  - [Serving Models with FastAPI](#serving-models-with-fastapi)
-  - [Serving Models with Flask](#serving-models-with-flask)
-  - [Serving Models with BentoML](#serving-models-with-bentoml)
-  - [Serving Models with Mlflow](#serving-models-with-mlflow)
-  - [Serving Models with Streamlit](#serving-models-with-streamlit)
-  - [Serving Models as Desktop/ Android Applications](#serving-models-as-desktop-android-applications)
-- [How to Test your models and applications with Pytest](#how-to-test-your-models-and-applications-with-pytest)
-- [Deploying your applications to AWS and Heroku](#deploying-your-applications-to-aws-and-heroku)
-  - [Working with Dockerfiles](#working-with-dockerfiles)
-- [Github Actions](#github-actions)
-  - [Using Github Actions and Heroku for CI/CD](#using-github-actions-and-heroku-for-cicd)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
 # Serving Machine Learning Models :robot
 
 ## About :boom
@@ -35,13 +7,38 @@
 **The Repository also has code and how-to's for deploying your apps to various cloud platforms(AWS, Heroku, Vercel etc), working with Github actions for CI/CD(Continuous Integration and Continuous Development), TDD(Test driven development) with pytest and other useful information.**
 
 ### Table of Contents :book
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
+- [Serving Machine Learning Models :robot](#serving-machine-learning-models-robot)
+  - [About :boom](#about-boom)
+    - [Table of Contents :book](#table-of-contents-book)
+  - [Repository Structure](#repository-structure)
+  - [Getting Started⚡](#getting-started)
+    - [Configuring Python Environment⚡](#configuring-python-environment)
+    - [Installing Dependencies and Creating virtual environments with pyenv](#installing-dependencies-and-creating-virtual-environments-with-pyenv)
+  - [Building Machine Learning Model: Car Price Prediction⚡](#building-machine-learning-model-car-price-prediction)
+    - [How to save Models with Joblib⚡](#how-to-save-models-with-joblib)
+    - [Version Control your models with DVC(Data Version Control)](#version-control-your-models-with-dvcdata-version-control)
+  - [Creating Applications with your Model :computer](#creating-applications-with-your-model-computer)
+    - [Serving Models with FastAPI⚡](#serving-models-with-fastapi)
+      - [Screenshot :camera](#screenshot-camera)
+    - [Serving Models with Flask⚡](#serving-models-with-flask)
+      - [Screenshot :camera](#screenshot-camera-1)
+    - [Serving Models with BentoML⚡](#serving-models-with-bentoml)
+    - [Serving Models with Mlflow⚡](#serving-models-with-mlflow)
+    - [Serving Models with Streamlit⚡](#serving-models-with-streamlit)
+    - [Serving Models as Desktop/Mobile Applications⚡](#serving-models-as-desktopmobile-applications)
+  - [How to Test your models and applications with Pytest⚡](#how-to-test-your-models-and-applications-with-pytest)
+    - [Working with Docker⚡](#working-with-docker)
+  - [Deploying your applications to AWS and Heroku⚡](#deploying-your-applications-to-aws-and-heroku)
+    - [Deploy to Heroku⚡](#deploy-to-heroku)
+    - [Deploy to AWS⚡](#deploy-to-aws)
+  - [Github Actions⚡](#github-actions)
+    - [Using Github Actions and Heroku for CI/CD⚡](#using-github-actions-and-heroku-for-cicd)
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 ## Repository Structure
-
-Generate repo structure with 'tree' command in linux. generate toc  npm install --save markdown-toc, and markdown-toc
-
 ```bash
-.
 ├── androidapp
 │   ├── buildozer.spec
 │   ├── data
@@ -65,6 +62,7 @@ Generate repo structure with 'tree' command in linux. generate toc  npm install 
 ├── fastapi
 │   ├── app.py
 │   ├── Dockerfile
+│   ├── fastapi-setup.sh
 │   ├── favicon.png
 │   ├── heroku.yml
 │   ├── models
@@ -72,7 +70,8 @@ Generate repo structure with 'tree' command in linux. generate toc  npm install 
 │   │   └── sklearn_gbr.pkl
 │   ├── models.py
 │   ├── requirements.txt
-│   └── train.py
+│   ├── train.py
+│   └── vercel.json
 ├── flaskapp
 │   ├── app.py
 │   ├── models
@@ -82,36 +81,12 @@ Generate repo structure with 'tree' command in linux. generate toc  npm install 
 │   ├── requirements.txt
 │   ├── runtime.txt
 │   ├── static
-│   │   ├── bootstrap.css
-│   │   ├── bootstrap.css.map
-│   │   ├── bootstrap-grid.css
-│   │   ├── bootstrap-grid.css.map
-│   │   ├── bootstrap-grid.min.css
-│   │   ├── bootstrap-grid.min.css.map
-│   │   ├── bootstrap.min.css
-│   │   ├── bootstrap.min.css.map
-│   │   ├── bootstrap-reboot.css
-│   │   ├── bootstrap-reboot.css.map
-│   │   ├── bootstrap-reboot.min.css
-│   │   ├── bootstrap-reboot.min.css.map
 │   │   ├── favicon.png
 │   │   └── w3.css
 │   ├── templates
 │   │   ├── index.html
 │   │   ├── result.html
 │   │   ├── static
-│   │   │   ├── bootstrap.css
-│   │   │   ├── bootstrap.css.map
-│   │   │   ├── bootstrap-grid.css
-│   │   │   ├── bootstrap-grid.css.map
-│   │   │   ├── bootstrap-grid.min.css
-│   │   │   ├── bootstrap-grid.min.css.map
-│   │   │   ├── bootstrap.min.css
-│   │   │   ├── bootstrap.min.css.map
-│   │   │   ├── bootstrap-reboot.css
-│   │   │   ├── bootstrap-reboot.css.map
-│   │   │   ├── bootstrap-reboot.min.css
-│   │   │   ├── bootstrap-reboot.min.css.map
 │   │   │   ├── favicon.png
 │   │   │   └── w3.css
 │   │   └── w3.css
@@ -195,21 +170,14 @@ Generate repo structure with 'tree' command in linux. generate toc  npm install 
 │   │       └── tags
 │   │           └── mlflow.note.content
 │   └── requirements.txt
-├── models
-│   ├── model.pkl
-│   └── sklearn_gbr.pkl
 ├── Notebooks
-│   ├── Car_Price_Prediction_with_Pycaret.ipynb
-│   └── Kivy_App_To_APK.ipynb
+│   └── Notebooks.zip
 ├── README.md
-├── requirements.txt
 ├── setup.sh
 ├── streamlitapp
 │   └── streamlit_app.py
-├── tests
-│   └── test_api.py
-├── todo.txt
-└── vercel.json
+└── tests
+    └── test_api.py
 ```
 
 ## Getting Started⚡
