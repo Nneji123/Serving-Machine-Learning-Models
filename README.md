@@ -282,13 +282,61 @@ The key features are:
 - Robust: Get production-ready code. With automatic interactive documentation.
 - Standards-based: Based on (and fully compatible with) the open standards for APIs: OpenAPI (previously known as Swagger) and JSON Schema. 
 
+To serve models with FastAPI I've created an example template in this repository in which I deployed the car price prediction model as an API which can be used to make POST requests to get predictions. To run that project locally on your system run the following:
+```bash
+cd fastapi
+pip install -r requirement.txt
+uvicorn app:app --reload
+```
+You should be able to view the API on your browser by visiting http://127.0.0.1:8000/
+
 In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn how to serve your model as a RESTful API with FastAPI.
 ### Serving Models with Flask
-### Serving Models with BentoML
-### Serving Models with Mlflow
-### Serving Models with Streamlit
-### Serving Models as Desktop/ Android Applications
+Flask is a micro web framework written in Python. It is classified as a microframework because it does not require particular tools or libraries. It has no database abstraction layer, form validation, or any other components where pre-existing third-party libraries provide common functions. However, Flask supports extensions that can add application features as if they were implemented in Flask itself. Extensions exist for object-relational mappers, form validation, upload handling, various open authentication technologies and several common framework related tools.
 
+To serve models with flask I've created a template in this repository in which I deployed the car price prediction model as a web app with basic html and css. To run that project locally on your system run the following:
+```bash
+cd flaskapp
+pip install -r requirements.txt
+python app.py
+```
+You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
+### Serving Models with BentoML
+BentoML is a Python open-source library that enables users to create a machine learning-powered prediction service in minutes, which helps to bridge the gap between data science and DevOps.
+
+To serve models with Bentoml I've created a template in this repository in which I deployed the car price prediction model as an API with Bentoml. To run that project locally on your system run the following:
+```bash
+cd bentoml
+pip install -r requirements.txt
+python bentosklearn.py
+bentoml serve service.py:service --reload
+```
+You should be able to view the application on your browser by visiting http://127.0.0.1:5000/
+### Serving Models with Mlflow
+MLflow is a platform to streamline machine learning development, including tracking experiments, packaging code into reproducible runs, and sharing and deploying models. MLflow offers a set of lightweight APIs that can be used with any existing machine learning application or library (TensorFlow, PyTorch, XGBoost, etc), wherever you currently run ML code (e.g. in notebooks, standalone applications or the cloud). 
+
+To serve models with mlflow I've created a template in this repository in which I deployed the car price prediction model as an API with mlflow. To run that project locally on your system run the following:
+```bash
+cd mlflow
+pip install -r requirements.txt
+python mlflow_app.py
+```
+Then you can run this command below to view the Mlflow User Interface:
+```bash
+mlflow ui
+```
+### Serving Models with Streamlit
+Streamlit is an open source app framework in Python language. It helps us create web apps for data science and machine learning in a short time. It is compatible with major Python libraries such as scikit-learn, Keras, PyTorch, SymPy(latex), NumPy, pandas, Matplotlib etc.
+
+To serve models with Streamlit I've created a template in this repository in which I deployed the car price prediction model as a web app with streamlit. To run that project locally on your system run the following:
+```bash
+cd streamlitapp
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+You should be able to view the web application in your browser with this link http://127.0.0.1:8501/
+### Serving Models as Desktop/ Android Applications
+You can also deploy 
 ## How to Test your models and applications with Pytest
 ## Deploying your applications to AWS and Heroku
 ### Working with Dockerfiles
