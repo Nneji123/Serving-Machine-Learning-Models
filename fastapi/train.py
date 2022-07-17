@@ -1,4 +1,3 @@
-import bentoml
 import pandas as pd
 from sklearn.datasets import make_regression
 from sklearn.ensemble import GradientBoostingRegressor
@@ -28,6 +27,13 @@ from sklearn.preprocessing import LabelEncoder
 
 
 def encode(data):
+    """
+    The encode function takes in a dataframe and encodes all categorical columns using the LabelEncoder.
+    The function returns the encoded dataframe.
+    
+    :param data: Encode the categorical columns
+    :return: The encoded dataframe
+    """
     catCols = [col for col in data.columns if data[col].dtype == "O"]
     lb_make = LabelEncoder()
 
