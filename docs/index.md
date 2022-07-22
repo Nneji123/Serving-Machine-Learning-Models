@@ -1,10 +1,12 @@
-## About
+# Serving Machine Learning Models :robot:
+
+## About :boom:
 
 **This repository contains instructions, template source code and examples on how to serve/deploy machine learning models using various frameworks and applications such as Docker, Flask, FastAPI, BentoML, Streamlit, MLflow and even code on how to deploy your machine learning model as an android app.**
 
 **The Repository also has code and how-to's for deploying your apps to various cloud platforms(AWS, Heroku, Vercel etc), working with Github actions for CI/CD(Continuous Integration and Continuous Development), TDD(Test driven development) with pytest and other useful information.**
 
-### Table of Contents 
+### Table of Contents :book:
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
@@ -287,7 +289,7 @@ uvicorn app:app --reload
 
 You should be able to view the API on your browser by visiting <http://127.0.0.1:8000/>
 
-You can also view the deployed api here https://dashboard.heroku.com/apps/carpriceapi
+You can also view the deployed API here https://carpriceapi.herokuapp.com
 
 In this [tutorial](https://medium.com/towards-data-science/deploying-an-ml-model-with-fastapi-a-succinct-guide-69eceda27b21) you can learn more about how to serve your model as a RESTful API with FastAPI.
 
@@ -310,7 +312,7 @@ python app.py
 
 You should be able to view the application on your browser by visiting <http://127.0.0.1:5000/>
 
-You can also view the deployed application here: https://dashboard.heroku.com/apps/carflaskpred
+You can also view the deployed application here: https://carflaskpred.herokuapp.com
 
 #### Screenshot :camera:
 ![Screenshot (166)](https://user-images.githubusercontent.com/101701760/179010868-19e1fab0-4a5e-4ea5-9d64-a59918e5e7c2.png)
@@ -363,7 +365,14 @@ streamlit run streamlit_app.py
 
 You should be able to view the web application in your browser with this link http://127.0.0.1:8501/
 
+You can also check out the streamlit application deployed on streamlit cloud [here](https://nneji123-serving-machine-learn-streamlitappstreamlit-app-hxttb4.streamlitapp.com/) 
+
+#### Screenshot :camera:
+![Screenshot (168)](https://user-images.githubusercontent.com/101701760/179064309-54ca0d12-56d6-4205-83e5-52b6646746f5.png)
+
+
 #### You can also check out my other Streamlit Projects with this [link](https://github.com/search?q=user%3ANneji123+streamlit)
+
 
 ### Serving Models as Desktop/Mobile Applications⚡
 
@@ -485,4 +494,4 @@ In this repository I've used Github actions to continuously deploy the Flask and
 You can read more about using Github actions to automate your workflow [here](https://towardsdatascience.com/how-to-deploy-a-machine-learning-model-with-fastapi-docker-and-github-actions-13374cbd638a)
 
 ## License 
-[MIT]()
+[MIT](https://github.com/Nneji123/Serving-Machine-Learning-Models/LICENSE.md)
