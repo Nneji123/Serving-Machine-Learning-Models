@@ -1,4 +1,4 @@
 numpy==1.19.5
 pandas==1.4.3
 scikit_learn==1.1.1
-bentoml==1.0.0a4
+bentoml==1.0.5
